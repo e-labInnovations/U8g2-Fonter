@@ -1,4 +1,4 @@
-# U9g2 Fonter
+# U8g2 Fonter
 
 **Development project**
 
@@ -10,7 +10,7 @@ Trying to develop a electron app for converting bdf font to U9g2 c file font
 
 
 ![GitHub Logo](https://e-labinnovations.web.app/images/logo.png)
-:heavy_plus_sign:
+
 ![GitHub Logo](/assets/images/u8g2.png)
 
 
