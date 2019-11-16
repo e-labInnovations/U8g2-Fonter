@@ -1,0 +1,20 @@
+{
+  "name": "U8g2Fonter",
+  "version": "1.0.0",
+  "description": "For converting bdf font to U8g2 c font",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "",
+  "keywords": [],
+  "author": "e-lab innovations",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.0.0"
+  },
+  "dependencies": {
+    "bdfjs": "0.0.8",
+    "custom-electron-titlebar": "^3.1.0"
+  }
+}

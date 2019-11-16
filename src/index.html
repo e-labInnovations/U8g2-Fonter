@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>U8G2 Fonter</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/materialize.min.css" />
+    <script src="../assets/js/materialize.min.js"></script>
+    <script>
+      M.AutoInit();
+    </script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col s4 l3 full-height sidenav">
+        <div class="card-panel full-height">
+          <div>
+            <b>Font Name: </b>
+            <div id="font_name"></div>
+          </div>
+          <div>
+            <b>Font Version: </b>
+            <div id="font_version"></div>
+          </div>
+          <div>
+            <b>Total Chars: </b>
+            <div id="font_totalchars"></div>
+          </div>
+          <div>
+            <b>Total Size: </b>
+            <div id="font_size"></div>
+          </div>
+          <div>
+            <b>BoundingBox: </b>
+            <div id="font_boundingbox"></div>
+          </div>
+          <div>
+            <b>Properties: </b>
+            <div id="font_properties"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s8 l9 full-height">
+        <div class="card-panel full-height">
+          <div class="row"><h3>Available Glyphs</h3></div>
+          <div class="row" id="glyph"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
