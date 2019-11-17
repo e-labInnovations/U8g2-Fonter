@@ -84,9 +84,8 @@ function createWindow() {
           click() {
             const modelPath = path.join('file://', __dirname, 'src/about.html');
             let win = new BrowserWindow({
-              width: 400,
-              height: 400,
-              frame: false
+              width: 300,
+              height: 500
             });
             win.on('close', function() {
               win = null;

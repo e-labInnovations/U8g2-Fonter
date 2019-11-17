@@ -5,6 +5,7 @@ const { dialog } = require('electron').remote;
 
 //const btn_input_file = document.querySelector('#btn-input-file');
 const glyphs_out = document.querySelector('#glyph');
+var glyphSampleData = [];
 
 let MyTitleBar = new customTitlebar.Titlebar({
   backgroundColor: customTitlebar.Color.fromHex('#191919'),
@@ -95,8 +96,9 @@ fs.readFile(fontPath, 'utf-8', (err, data) => {
     'font_properties'
   ).innerHTML = `<div>FontAscent: ${font.meta.properties.fontAscent}</div>
   <div>DontDescent: ${font.meta.properties.fontDescent}</div>`;
+  glyphSampleData = font.glyphs[65].bitmap;
+  sampleGlyph('showSampleGlyph', glyphSampleData, 10, 10, 1);
 
-  // glyphs_out.innerHTML = JSON.stringify(font);
   glyphs_out.innerHTML = Object.keys(font.glyphs)
     .map(key => {
       return `<div class="col s3 l2 glyph-item hoverable">
@@ -105,12 +107,70 @@ fs.readFile(fontPath, 'utf-8', (err, data) => {
         <div class="left-align s6 col">${font.glyphs[key].name}</div>
         <div class="right-align s6 col">${font.glyphs[key].code}</div>
       </div>
+      <div class="row" id="${font.glyphs[key].char}"></div>
       <div class="row">${font.glyphs[key].char}</div>
       </div>`;
     })
     .join('');
+  Object.keys(font.glyphs).map(key => {
+    sampleGlyph(font.glyphs[key].char, font.glyphs[key].bitmap);
+  });
 });
 
-//var font = BDF.parse(fs.readFileSync('../font.bdf'));
-// var bitmap = BDF.draw(font, 'He');
-// console.log(bitmap);
+const sampleGlyph = (id, glyphData, w = 4, h = 4, stroke = 0.5) => {
+  var w1 = w;
+  var h1 = h;
+  var x1 = 0;
+  var y1 = 0;
+  var input = glyphData;
+  var width = w * glyphData[1].length;
+  var height = h * glyphData.length;
+
+  if (input.length > 0) {
+    var stage = new Konva.Stage({
+      container: id,
+      width: width,
+      height: height
+    });
+
+    var layer = new Konva.Layer();
+
+    for (let i = 0; i < input.length; i++) {
+      for (let f = 0; f < input[i].length; f++) {
+        //var layerNew = new Konva.Layer();
+        if (input[i][f] == 1) {
+          var rect2 = new Konva.Rect({
+            x: x1,
+            y: y1,
+            width: w1,
+            height: h1,
+            fill: '#222222',
+            stroke: 'black',
+            strokeWidth: stroke
+          });
+          // add the shape to the layer
+          layer.add(rect2);
+        } else {
+          var rect2 = new Konva.Rect({
+            x: x1,
+            y: y1,
+            width: w1,
+            height: h1,
+            fill: '#FFFFFF',
+            stroke: 'black',
+            strokeWidth: stroke
+          });
+          // add the shape to the layer
+          layer.add(rect2);
+        }
+
+        x1 = x1 + w1;
+      }
+      y1 = y1 + h1;
+      x1 = 0;
+    }
+
+    // add the layer to the stage
+    stage.add(layer);
+  }
+};
