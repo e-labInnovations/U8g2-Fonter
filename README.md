@@ -11,7 +11,7 @@ Trying to develop a electron app for converting bdf font to U9g2 c file font
 
 ![GitHub Logo](https://e-labinnovations.web.app/images/logo.png)
 
-![GitHub Logo](/assets/images/u8g2.png)
+![GitHub Logo](/assets/images/20191118_200445.png)
 
 
 
