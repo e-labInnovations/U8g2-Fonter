@@ -97,7 +97,7 @@ function createWindow() {
         {
           label: 'U8g2 Page',
           click() {
-            shell.openExternal('http://e-labinnovations.ml');
+            shell.openExternal('http://e-labinnovations.web.app');
           }
         }
       ]
