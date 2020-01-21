@@ -9,9 +9,9 @@ Trying to develop a electron app for converting bdf font to U9g2 c file font
 **[e-lab innovations](https://e-labinnovations.ml)**
 
 
-![GitHub Logo](https://e-labinnovations.web.app/images/logo.png)
+![GitHub Logo](https://e-labinnovations.web.app/images/logo.png | width=200)
 
-![GitHub Logo](/assets/images/20191118_200445.png)
+![GitHub Logo](/assets/images/20191118_200445.png | width=200)
 
 
 
