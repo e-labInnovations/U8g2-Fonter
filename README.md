@@ -2,7 +2,7 @@
 
 **Development project**
 
-Trying to develop a electron app for converting bdf font to U9g2 c file font
+Trying to develop an electron app for converting bdf font to U8g2 c file font
 
 ## More
 
